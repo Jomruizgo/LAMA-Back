@@ -3,10 +3,12 @@ package com.hackaton.msvc_user.domain.api.usecase;
 import com.hackaton.msvc_user.domain.exceptions.DuplicatedObjectException;
 import com.hackaton.msvc_user.domain.model.User;
 import com.hackaton.msvc_user.domain.spi.IUserPersistencePort;
+import com.hackaton.msvc_user.domain.util.Regex;
 import com.hackaton.msvc_user.domain.util.ValidationMessages;
 
 import java.util.Calendar;
 import java.util.Date;
+
 
 
 public class ValidateUser {
@@ -31,7 +33,7 @@ public class ValidateUser {
             throw new DuplicatedObjectException(ValidationMessages.DUPLICATE_DOCUMENT);
         }
 
-        if (user.getMobileNumber() == null || !user.getMobileNumber().matches("^\\+?\\d{1,13}$")) {
+        if (user.getMobileNumber() == null || !user.getMobileNumber().matches(Regex.MOBILE_NUMBER_REGEX)) {
             throw new IllegalArgumentException(ValidationMessages.MOBILE_NUMBER_INVALID);
         }
 
@@ -53,7 +55,7 @@ public class ValidateUser {
     }
 
     private boolean isValidEmail(String email) {
-        String emailRegex = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$";
+        String emailRegex = Regex.EMAIL_REGEX;
         return email != null && email.matches(emailRegex);
     }
 

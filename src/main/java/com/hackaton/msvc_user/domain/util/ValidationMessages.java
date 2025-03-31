@@ -13,4 +13,7 @@ public class ValidationMessages {
     public static final String ROLE_INVALID = "Role must be valid";
     public static final String PASSWORD_MANDATORY = "Password is mandatory";
     public static final String MIN_PASSWORD_SIZE = "Password must be at least 8 characters long";
+    public static final String RH_NOT_FOUND_MESSAGE = "RH not found";
+    public static final String RH_INVALID_MESSAGE = "Invalid RH format. The correct format is A+, A-, B+, B-, AB+, AB-, O+, O-";
+
 }

@@ -26,7 +26,7 @@ public class JwtUserDetails {
 
         List<SimpleGrantedAuthority> authorities = new ArrayList<>();
 
-        authorities.add(new SimpleGrantedAuthority("ROLE_" + userModel.getRole().getName()));
+        authorities.add(new SimpleGrantedAuthority("ROLE_" + userModel.getRole().getRoleName()));
         return new org.springframework.security.core.userdetails.User(userModel.getEmail(),
                 userModel.getPassword(),
                 userModel.getIsActive(),

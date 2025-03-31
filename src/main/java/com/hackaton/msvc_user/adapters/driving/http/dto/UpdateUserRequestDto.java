@@ -5,14 +5,15 @@ import com.hackaton.msvc_user.domain.model.UserEmergencyContact;
 import com.hackaton.msvc_user.domain.util.Rank;
 import com.hackaton.msvc_user.domain.util.Status;
 import com.hackaton.msvc_user.domain.util.ValidationMessages;
-import jakarta.validation.constraints.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 
 import java.util.Date;
 import java.util.List;
 
 @AllArgsConstructor
-public class AddUserRequestDto {
+public class UpdateUserRequestDto {
 
     private Long documentId;
 
